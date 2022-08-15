@@ -87,7 +87,7 @@ public class AppController implements Initializable{
         setTerminalText("");
 
         //adding items
-        comoBox1.getItems().addAll("Maccaroni", "Diagnal", "Curves", "Spiral", "zigZag", "C-uz why not");
+        comoBox1.getItems().addAll("Maccaroni", "Diagnal", "Curves", "Spiral", "zigZag", "C-uz why not", "Lightning");
         comoBox2.getItems().addAll("Algorithm1", "Algorithm2");      
         
         //Slider listener

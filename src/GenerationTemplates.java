@@ -61,87 +61,69 @@ public class GenerationTemplates {
     }
 
     /*Generate a V , and a extra line along it */
-    public void zigZag(IntField field, int magnitude){
+    public void zigZag(IntField field){
         if (randomBool())
         { //  creates \/
 
-            field.diagGrid(r,c, 1);
-            field.diagGrid(r, c, 3);
+            int[] coords1 = field.diagGrid(r,c, 1);
+            int[] coords2 = field.diagGrid(r, c, 3);
         
             //generate diagnal line at end of other line
             if (randomBool())
-                diagOffset(field, magnitude, 2, "northeast");
+                field.diagGrid(coords1[0], coords1[1], 2);
             else 
-                diagOffset(field, magnitude, 4, "northwest");
+                field.diagGrid(coords2[0], coords2[1], 4);
             }
         else{//creates /\
 
-            field.diagGrid(r,c, 2);
-            field.diagGrid(r, c, 4);
+            int[] coords1 = field.diagGrid(r,c, 2);
+            int[] coords2 = field.diagGrid(r, c, 4);
             //generate diagnal line at end of other line
             if (randomBool())
-                diagOffset(field, magnitude, 1, "southeast");
+                field.diagGrid(coords1[0], coords1[1], 1);
             else 
-                diagOffset(field, magnitude, 3, "southwest");
+                field.diagGrid(coords2[0], coords2[1], 3);
             }
-
-        
         field.testSetBox(r, c);//set starting box
-
     }
     
     /*Creates a C cup shape , acually dont know why but it will help me with the recursive stuff */
-    public void C(IntField field, int magnitude)
+    public void C(IntField field)
     {
         if (randomBool()){
             // make a \/
-            field.diagGrid(r, c, 1);
-            field.diagGrid(r, c, 3);
+            int[] coords1 = field.diagGrid(r, c, 1);
+            int[] coords2 = field.diagGrid(r, c, 3);
             if (randomBool())
-                diagOffset(field, magnitude, 3, "northeast");
+                field.diagGrid(coords1[0], coords1[1], 3);
             else 
-                diagOffset(field, magnitude, 1, "northwest");
+                field.diagGrid(coords2[0], coords2[1], 1);
             }
-            // make a /\
-        else{
-            field.diagGrid(r, c, 2);
-            field.diagGrid(r, c, 4);
+        else{// make a /\
+            int[] coords1 = field.diagGrid(r, c, 2);
+            int[] coords2 = field.diagGrid(r, c, 4);
             if (randomBool())
-                diagOffset(field, magnitude, 4, "southeast");
+                field.diagGrid(coords1[0], coords1[1], 4);
             else 
-                diagOffset(field, magnitude, 2, "southwest");
+                field.diagGrid(coords2[0], coords2[1], 2);
             }
         field.testSetBox(r, c);//set starting box
 
     }
 
-    /*Generates diagnal line , with the startingpos Offset by the direction given (moved by +-Magnitude)
-     * NOT casesensitive: Noththeast southeast northwest southwest
-     */
-    public void diagOffset(IntField field, int magnitude, int direction, String s)
-    {
-        s = s.toLowerCase(); 
-        switch (s) { //handles the offset
-            case "northeast":
-                field.diagGrid(r - magnitude, c + magnitude, direction);
-                break;
-            case "southeast":
-                field.diagGrid(r + magnitude, c + magnitude, direction);
-                break;
-            case "northwest":
-                field.diagGrid(r - magnitude, c - magnitude, direction);
-                break;
-            case "southwest":
-                field.diagGrid(r + magnitude, c - magnitude, direction);
-                break;
-            default:
-                System.out.println("DiagOffset String unrecognized:");
-                break;
+    /*Generates diagnal lines off of other diagLines */
+    public void Lightning(IntField field, int numOfLines){
+        int[] currentCOORDS = new int[2];
+        //coords at mouseclick
+        currentCOORDS[0] = r;
+        currentCOORDS[1] = c;
+
+        for (int i = 0; i < numOfLines; i++)
+        {
+            //Chain of lines
+            int[] endOfline = field.diagGrid(currentCOORDS[0], currentCOORDS[1], (int)(Math.random()*4) + 1); //Direction 1- 4
+            currentCOORDS = endOfline;
         }
-    }
-
-    public void recursiveLightning(){
-
     }
 
     public static boolean randomBool()

@@ -123,22 +123,25 @@ public class TileManager {
             GenerationTemplates template = new GenerationTemplates(y, x);
             switch (GenTemplate){
                 case "Maccaroni":
-                    template.Maccaroni(intField);//row first then column
+                    template.Maccaroni(intField);
                     break;
                 case "Diagnal":
-                    template.diagnal(intField);//row first then column
+                    template.diagnal(intField);
                     break;
                 case "Curves":
-                    template.curves(intField);//row first then column
+                    template.curves(intField);
                     break;
                 case "Spiral":
-                    template.spiral(intField);//row first then column
+                    template.spiral(intField);
                     break;
                 case "zigZag":
-                    template.zigZag(intField, magnitude); //magnitude for-> moving starting pos
+                    template.zigZag(intField);
                     break;
                 case "C-uz why not":
-                        template.C(intField, magnitude); //magnitude for-> moving starting pos
+                        template.C(intField); 
+                    break; 
+                case "Lightning":
+                        template.Lightning(intField, 30); 
                     break;
                 default:
                     controller.setTerminalText("Error with Generation Templates:");
