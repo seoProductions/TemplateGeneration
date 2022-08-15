@@ -85,15 +85,19 @@ public class IntField {
 
     r - startin row
     c - starting column
+
+    Returns Array[2] Y,X - ending position of line generated
     */
-    public void diagGrid(int r, int c, int direction)
+    public int[] diagGrid(int r, int c, int direction)
     {
+        int[] endPos = new int[2];//holds the end position
         //either random iterations , or to a pre-set iteration
         int rand;
         if (randomIterations)
             rand = (int)((Math.random() * Math.min(rows, columns)) / 2) + 2; // 0 < x < smallest side
         else rand = iterations;
 
+        
         //NorthEast   Rows-- Colum++
         if (direction == 1){
             for (int i = 0; i < rand; i ++) 
@@ -105,7 +109,6 @@ public class IntField {
 
                 r--; //up the grid
                 c++; //right the grid
-
             }
         }
         //SouthEast  All +
@@ -119,7 +122,6 @@ public class IntField {
 
                 r++; //down the grid
                 c++; //right the grid
-
             }
         }
             //NorthWest   All -
@@ -134,7 +136,6 @@ public class IntField {
                     
                 r--; //up the grid
                 c--; //left the grid
-    
             }
         }
         //SouthWest   rows++ Columns --
@@ -149,9 +150,11 @@ public class IntField {
                     
                 r++; //down the grid/
                 c--; //left the grid
-    
             }
         }    
+        endPos[0] = r; //row / Y
+        endPos[1] = c; //column / X
+        return endPos;
     }
 
     /***Directions***
