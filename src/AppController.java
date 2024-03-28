@@ -91,15 +91,12 @@ public class AppController implements Initializable{
         comoBox2.getItems().addAll("Algorithm1", "Algorithm2");      
         
         //Slider listener
-        mySlider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+        mySlider.valueProperty().addListener((arg0, arg1, arg2) -> {
 
-                sliderLabel.setText("" +(int)mySlider.getValue());
-                updateCurve();
+            sliderLabel.setText("" +(int)mySlider.getValue());
+            updateCurve();
 
-                setTerminalText("Slider Value: " + (int)mySlider.getValue());//terminal
-            }
+            setTerminalText("Slider Value: " + (int)mySlider.getValue());//terminal
         });
 
         //Magnitude listener
@@ -116,7 +113,7 @@ public class AppController implements Initializable{
                  System.out.println("Missing magnitude!:");
                  setTerminalText("Missing magnitude");//terminal
                 }
-                 } catch (Exception e) { System.out.println(e); }
+                 } catch (Exception e) { System.out.println(e.getMessage()); }
         });
 
         //playbackSpeed listener
@@ -129,16 +126,14 @@ public class AppController implements Initializable{
             catch (NumberFormatException e) {
                 System.out.println("Missing playbackSpeed!:");
                 setTerminalText("Missing PlaybackSpeed!: Default to 1/4 of a second (100)");//terminal
-            } catch (Exception e) { System.out.println(e); }
+            } catch (Exception e) { System.out.println(e.getMessage()); }
         });
 
         //combobox listener
-        comoBox1.valueProperty().addListener((current, oldVal, newVal) -> {
-            comboValue1 = newVal;
-        });
-        comoBox2.valueProperty().addListener((current, oldVal, newVal) -> {
-            comboValue2 = newVal;
-        });
+        comoBox1.valueProperty().addListener((current, oldVal, newVal)
+                -> comboValue1 = newVal);
+        comoBox2.valueProperty().addListener((current, oldVal, newVal)
+                -> comboValue2 = newVal);
     
     }
 
@@ -179,7 +174,7 @@ public class AppController implements Initializable{
     //Update magnitude when Gridsize changed
     public void updateMagnitude() {
         int x = (int)(5.0 * Math.log10((double)size + 0.5)) + 1; //
-        setMagnitude(x); //from 3 - 9
+        setMagnitude(x); //from 3 to 9
     }
 
 

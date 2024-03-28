@@ -1,3 +1,12 @@
+/* This file is a trip back in time x_x */
+/* My first prototype of this project came from this file named IntField */
+/* I had used a "Field", or simply said, a 2D array inorder to generate  */
+/* an interesting design of paterns. It started with a line, then a swirl, then a diagnal, so on, and so on,  */
+/* This began my junior year towards my spring semester, my program originaly   */
+/* spat a grid of 0's and 1's onto the console. infact I still have the toString() function */
+/* Unfortunatley for me, my rubber duck was one of the few who took interest in this hobby... */
+
+
 public class IntField {
 
     private int[][] grid;

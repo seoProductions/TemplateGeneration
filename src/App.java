@@ -64,7 +64,7 @@ public class App extends Application{
                     tileManager.createCheckerBoard();
                 }
                 else
-                controller.setTerminalText("Please input numbers from 3 - 50");
+                    controller.setTerminalText("Please input numbers from 3 - 50");
 
             }
             catch (NumberFormatException e) {
