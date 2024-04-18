@@ -24,7 +24,6 @@ Here I implimented some sinusoidal behavior
 
 ### Spiral
 
-again
 
 ![swirl](https://github.com/seoProductions/TemplateGeneration/assets/111206081/da8b9fd5-d4f0-4ca0-aab0-7e82bc48e013)
 
@@ -54,7 +53,8 @@ Here it is again with: random magnitude [checked]
 
 Here is a close up of my Setting's Implentation:
 
-![settings](https://github.com/seoProductions/TemplateGeneration/assets/111206081/29610b02-53cc-40b5-80ad-7d407764ea84)
+![Kooha-2024-04-18-13-07-03](https://github.com/seoProductions/TemplateGeneration/assets/111206081/29b88e61-bac0-4d74-858d-fdb0f6494e94)
+
 
 You can modify the sinusoidal behavior
 
