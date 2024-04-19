@@ -1,9 +1,0 @@
-Uh its a big mess i know D:
-But im learning and growing . ;)
-@seoProductions
-
-IntField -              manages 2DArray
-GenerationTemplates -   Templates to generate 
-FancyRectangle -        Extra stuff added to it (holds starting pos when click)
-Draggable maker -       The name sais it
-Tile Manager    -       manages - puting squares onto the panes , animating them , rendering, ect
