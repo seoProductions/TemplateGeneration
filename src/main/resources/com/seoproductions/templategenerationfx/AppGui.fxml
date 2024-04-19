@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="789.0" style="-fx-background-color: #F0CEA0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seoproductions.templategenerationfx.AppController">
+   <children>
+      <Pane fx:id="topPane" prefHeight="35.0" prefWidth="789.0" style="-fx-background-color: #534D41;">
+         <children>
+            <Button layoutX="719.0" layoutY="5.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #F0CEA0;" text="close" />
+            <ComboBox fx:id="comoBox1" layoutX="14.0" layoutY="5.0" prefWidth="150.0" promptText="Choose a template!" style="-fx-background-color: #c7ae7f;" />
+            <ComboBox fx:id="comoBox2" layoutX="202.0" layoutY="5.0" prefWidth="150.0" promptText="Algorithm..." style="-fx-background-color: #c7ae7f;" />
+            <Label layoutX="391.0" layoutY="5.0" prefHeight="25.0" prefWidth="282.0" style="-fx-text-fill: #e6dac3;" text="Tile Generation .v3        Made using Java">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="rightPane" layoutX="600.0" layoutY="35.0" prefHeight="503.0" prefWidth="174.0" style="-fx-background-color: #c7ae7f;">
+         <children>
+            <CheckBox fx:id="magnitudeCheckBox" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" onAction="#randomChanged" prefWidth="148.0" text="Set Random Magnitude" />
+            <Label layoutX="51.0" layoutY="3.0" text="Settings">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Line endX="131.66668701171875" endY="7.62939453125E-6" layoutX="21.0" layoutY="33.0" startX="-2.33331298828125" startY="7.62939453125E-6" />
+            <Label fx:id="magnitudeLabel" layoutX="38.0" layoutY="70.0" text="Set Magnitude:" />
+            <TextField fx:id="magnitudeTextField" layoutX="122.0" layoutY="66.0" prefHeight="25.0" prefWidth="38.0" />
+            <Label layoutX="15.0" layoutY="131.0" text="Degrees for generation:" />
+            <CubicCurve fx:id="myCurve" controlX1="-8.66314697265625" controlX2="-8.66314697265625" controlY1="19.00000762939453" controlY2="-18.333332061767578" endX="-8.66314697265625" endY="-18.333332061767578" fill="#1f93ff00" layoutX="128.0" layoutY="211.0" startX="-109.0" startY="19.00000762939453" stroke="BLACK" />
+            <Slider fx:id="mySlider" layoutX="16.0" layoutY="154.0" majorTickUnit="45.0" max="180.0" min="90.0" showTickLabels="true" showTickMarks="true" value="90.0" />
+            <Label fx:id="sliderLabel" layoutX="134.0" layoutY="194.0" prefHeight="35.0" prefWidth="38.0" text="90">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="230.0" prefHeight="39.0" prefWidth="93.0" text="Playback Speed: (milliseconds)" wrapText="true" />
+            <TextField fx:id="playbackTextField" layoutX="115.0" layoutY="237.0" prefHeight="25.0" prefWidth="47.0" text="1000" />
+            <Pane fx:id="demoPane1" layoutX="50.0" layoutY="280.0" prefHeight="94.0" prefWidth="102.0" style="-fx-background-color: #8f7f60;" />
+            <Pane fx:id="demoPane2" layoutX="50.0" layoutY="395.0" prefHeight="94.0" prefWidth="102.0" style="-fx-background-color: #8f7f60;" />
+            <Label layoutX="-14.0" layoutY="315.0" prefHeight="25.0" prefWidth="85.0" rotate="270.0" text="Algorithm1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="-14.0" layoutY="429.0" prefHeight="25.0" prefWidth="85.0" rotate="270.0" text="Algorithm2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="gridSizeTextField" layoutX="122.0" layoutY="98.0" prefHeight="25.0" prefWidth="38.0" />
+            <Label layoutX="57.0" layoutY="91.0" prefHeight="39.0" prefWidth="63.0" text="Grid Size:" wrapText="true" />
+            <Label layoutX="74.0" layoutY="489.0" style="-fx-text-fill: #c7ae7f;" text="\@seoProductions" />
+         </children></Pane>
+      <Pane fx:id="centerPane" layoutY="53.0" prefHeight="439.0" prefWidth="574.0" style="-fx-background-color: #8f7f60;" />
+      <Pane layoutY="500.0" prefHeight="39.0" prefWidth="574.0" style="-fx-background-color: #897E6C;">
+         <children>
+            <Label fx:id="terminalText" layoutX="12.0" layoutY="5.0" prefHeight="30.0" prefWidth="550.0" style="-fx-text-fill: #e6dac3;" text="this the terminal" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children></Pane>
+   </children>
+</AnchorPane>
