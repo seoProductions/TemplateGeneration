@@ -1,5 +1,14 @@
+# linguist languages retrieved from 
+# https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml
+
+
 # classify `.fxml` files as a FXML file
 *.fxml linguist-language=XML
 
+# classify `.xml` files as a Maven POM file
+*.xml linguist-language=Maven POM
+
+
 # mark as detectable
 *.fxml linguist-detectable
+*.xml  linguist-detectable
