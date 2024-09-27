@@ -1,0 +1,5 @@
+# classify `.fxml` files as a FXML file
+*.fxml linguist-language=XML
+
+# mark as detectable
+*.fxml linguist-detectable
