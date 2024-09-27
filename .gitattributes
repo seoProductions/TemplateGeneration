@@ -6,9 +6,9 @@
 *.fxml linguist-language=XML
 
 # classify `.xml` files as a Maven POM file
-*.xml linguist-language=Maven POM
+pom.xml linguist-language=Maven POM
 
 
 # mark as detectable
 *.fxml linguist-detectable
-*.xml  linguist-detectable
+pom.xml  linguist-detectable
